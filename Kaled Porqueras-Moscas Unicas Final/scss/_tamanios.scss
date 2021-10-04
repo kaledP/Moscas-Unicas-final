@@ -1,0 +1,28 @@
+$fullAncho:100%;
+
+.col-50{
+	width: $fullAncho/2;
+}
+
+@for $i from 1 through 10{
+	.col-#{$i}{
+	 width:10%*$i;
+	}
+} 
+
+@mixin flex-end{
+	display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+}
+@mixin overflow-x {
+	overflow-x: hidden;
+}
+@mixin flex-colum{
+	display: flex;
+	flex-direction:column;
+}
+
+div{
+	@include flex-end;
+}

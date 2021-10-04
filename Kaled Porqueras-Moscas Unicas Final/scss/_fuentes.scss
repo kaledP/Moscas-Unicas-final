@@ -1,0 +1,75 @@
+$pDesktop:20px;
+$fontFamily: "tahoma"; 
+	p{ 
+	font:{
+	  size:$pDesktop;
+	  family:$fontFamily;
+	  weight:bold;
+      }
+}
+ p {
+  font-size:40px;
+ }
+
+ $vista:desktop;
+
+ body { 
+
+  @if $vista == desktop {
+       h1{font-size:5em;}
+       h2{font-size:4em;}
+     }
+    @else if $vista == mobile {
+     h1{
+     font-size:20px;
+     }
+     h2{
+     font-size:18px;
+     }
+
+       }   
+    @else{ 
+     h1{font-size:50px;}
+     h2{font-size:40px;}
+      }
+ 
+     }
+
+$estilos: (
+color: #3673D9,
+centro: center,
+upper: uppercase,
+tFuente: 35px,
+1rem: 1rem
+);
+
+div{
+  background-color: map-get($estilos, color);
+  text-align: map-get($estilos, centro);
+  padding: map-get($estilos, 1rem);
+  font-size: map-get($estilos, tFuente);
+  color: white;
+}
+
+$padding: (
+   TB:50px 50px,
+   LR:20px 20px
+   );
+@each $ubicacion,$espacio in $padding{
+  .padding#{$ubicacion}{
+   padding:$espacio;
+  }
+
+}
+
+@mixin textos($color,$size){
+  color:$color;
+  font-size:$size
+}
+
+h1{
+   @include textos(blue,5em);
+}
+h2{ 
+  @include textos(red,4em);
+}

@@ -1,0 +1,30 @@
+@import "fuentes";
+/*variables*/
+$azul:blue;
+$negro:rgb(0,0,0);
+$amarillo:yellow;
+
+
+.texto{
+	background:linear-gradient(to bottom, black, yellow)
+    &__encabezado{
+    color:$amarillo;
+    
+    }
+    &__parrafo{
+    font-size:20px;
+   
+    &--color{
+    color:$azul;
+    @media only screen and (max-width768px){
+    color:$amarillo;
+       }
+    }
+    }
+}
+
+@each $color in $azul, $negro , $amarillo {
+   .#{$color}{
+     color:#{$color};
+   }
+}
